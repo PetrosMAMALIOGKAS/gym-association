@@ -40,7 +40,6 @@ public class Sports {
 		this.entainer = entainer;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Sports [jouer=" + jouer + ", arbitrer=" + arbitrer + ", entainer=" + entainer + "]";
