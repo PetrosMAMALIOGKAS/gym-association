@@ -9,6 +9,7 @@ public class Sportif {
 	private String age;
 	private Sports sports;
 	
+	public Sportif() {}
 	
 	public Sportif(String idSportif, String nom, String prenom, String sexe, String age, Sports sports) {
 		super();

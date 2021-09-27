@@ -8,6 +8,8 @@ public class Sports {
 	private List<String> entainer;
 	
 	
+	public Sports() {}
+	
 	public Sports(List<String> jouer, List<String> arbitrer, List<String> entainer) {
 		super();
 		this.jouer = jouer;
