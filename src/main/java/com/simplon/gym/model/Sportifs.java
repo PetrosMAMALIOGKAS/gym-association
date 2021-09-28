@@ -1,7 +1,12 @@
-package model;
+package com.simplon.gym.model;
 
-public class Sportif {
-	private String _id;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Sportifs {
+	
+	@JsonProperty("_id")
+    private String id;
+	
 	private String idSportif;
 	private String nom;
 	private String prenom;
@@ -9,9 +14,9 @@ public class Sportif {
 	private String age;
 	private Sports sports;
 	
-	public Sportif() {}
+	public Sportifs() {}
 	
-	public Sportif(String idSportif, String nom, String prenom, String sexe, String age, Sports sports) {
+	public Sportifs(String idSportif, String nom, String prenom, String sexe, String age, Sports sports) {
 		super();
 		this.idSportif = idSportif;
 		this.nom = nom;
@@ -23,20 +28,20 @@ public class Sportif {
 
 	
 	
-	public String get_id() {
-		return _id;
+	public String getId() {
+		return id;
 	}
 
-	public void set_id(String _id) {
-		this._id = _id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getIdSportif() {
 		return idSportif;
 	}
 	
-	public void setIdSportif(String idSportif) {
-		this.idSportif = idSportif;
+	public void setIdSportif(String object) {
+		this.idSportif = object;
 	}
 
 	public String getNom() {
@@ -81,7 +86,7 @@ public class Sportif {
 
 	@Override
 	public String toString() {
-		return "Sportif [_id=" + _id + ", idSportif=" + idSportif + ", nom=" + nom + ", prenom=" + prenom + ", sexe="
+		return "Sportif [_id=" + id + ", idSportif=" + idSportif + ", nom=" + nom + ", prenom=" + prenom + ", sexe="
 				+ sexe + ", age=" + age + ", sports=" + sports + "]";
 	}
 	

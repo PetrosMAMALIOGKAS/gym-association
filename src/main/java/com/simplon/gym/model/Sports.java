@@ -1,20 +1,20 @@
-package model;
+package com.simplon.gym.model;
 
 import java.util.List;
 
 public class Sports {
 	private List<String> jouer;
 	private List<String> arbitrer;
-	private List<String> entainer;
+	private List<String> entrainer;
 	
 	
 	public Sports() {}
 	
-	public Sports(List<String> jouer, List<String> arbitrer, List<String> entainer) {
+	public Sports(List<String> jouer, List<String> arbitrer, List<String> entrainer) {
 		super();
 		this.jouer = jouer;
 		this.arbitrer = arbitrer;
-		this.entainer = entainer;
+		this.entrainer = entrainer;
 	}
 
 
@@ -34,17 +34,17 @@ public class Sports {
 		this.arbitrer = arbitrer;
 	}
 
-	public List<String> getEntainer() {
-		return entainer;
+	public List<String> getEntrainer() {
+		return entrainer;
 	}
 
-	public void setEntainer(List<String> entainer) {
-		this.entainer = entainer;
+	public void setEntrainer(List<String> entrainer) {
+		this.entrainer = entrainer;
 	}
 
 	@Override
 	public String toString() {
-		return "Sports [jouer=" + jouer + ", arbitrer=" + arbitrer + ", entainer=" + entainer + "]";
+		return "Sports [jouer=" + jouer + ", arbitrer=" + arbitrer + ", entainer=" + entrainer + "]";
 	}
 	
 	
