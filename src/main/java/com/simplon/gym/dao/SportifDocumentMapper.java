@@ -1,5 +1,6 @@
 package com.simplon.gym.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.Document;
@@ -47,15 +48,38 @@ public class SportifDocumentMapper {
         }
         
         if (document.containsKey("Jouer")) {
-        	sports.setJouer((List<String>) document.get("Jouer"));
+        	try {
+        		sports.setJouer((List<String>) document.get("Jouer"));
+        		
+        	} catch (Exception e) {
+        		
+        		List<String> jouer = new ArrayList<>();
+        		jouer.add( (String) document.get("Jouer"));
+        		sports.setJouer(jouer);
+        	}
         }
         
         if (document.containsKey("Arbitrer")) {
-        	sports.setArbitrer((List<String>) document.get("Arbitrer"));
+        	try {
+            	sports.setArbitrer((List<String>) document.get("Arbitrer"));
+        	} catch (Exception e) {
+        		
+        		List<String> arbitrer = new ArrayList<>();
+        		arbitrer.add( (String) document.get("Arbitrer"));
+        		sports.setArbitrer(arbitrer);
+        	}
         }
         
         if (document.containsKey("Entrainer")) {
-        	sports.setEntrainer((List<String>) document.get("Entrainer"));
+        	try {
+        		sports.setEntrainer((List<String>) document.get("Entrainer"));
+        	} catch (Exception e) {
+        		
+        		List<String> entrainer = new ArrayList<>();
+        		entrainer.add( (String) document.get("Entrainer"));
+        		sports.setArbitrer(entrainer);
+        	}
+        	
         }
  
         return sports;

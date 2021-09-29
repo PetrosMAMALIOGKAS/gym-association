@@ -6,17 +6,16 @@ public class Sports {
 	private List<String> jouer;
 	private List<String> arbitrer;
 	private List<String> entrainer;
-	
-	
-	public Sports() {}
-	
+
+	public Sports() {
+	}
+
 	public Sports(List<String> jouer, List<String> arbitrer, List<String> entrainer) {
 		super();
 		this.jouer = jouer;
 		this.arbitrer = arbitrer;
 		this.entrainer = entrainer;
 	}
-
 
 	public List<String> getJouer() {
 		return jouer;
@@ -46,8 +45,33 @@ public class Sports {
 	public String toString() {
 		return "Sports [jouer=" + jouer + ", arbitrer=" + arbitrer + ", entainer=" + entrainer + "]";
 	}
-	
-	
-	
 
+	public static class Builder {
+		private List<String> jouer;
+		private List<String> arbitrer;
+		private List<String> entrainer;
+
+		public Builder jouer(List<String> jouer) {
+			this.jouer = jouer;
+			return this;
+		}
+
+		public Builder arbitrer(List<String> arbitrer) {
+			this.arbitrer = arbitrer;
+			return this;
+		}
+
+		public Builder entrainer(List<String> entrainer) {
+			this.entrainer = entrainer;
+			return this;
+		}
+
+		public Sports build() {
+			Sports sports = new Sports();
+			sports.jouer = jouer;
+			sports.arbitrer = arbitrer;
+			sports.entrainer = entrainer;
+			return sports;
+		}
+	}
 }
