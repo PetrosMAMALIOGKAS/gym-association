@@ -1,16 +1,22 @@
 package com.simplon.gym.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.Filters;
+import com.simplon.gym.model.Sportifs;
 
 
 @Repository
@@ -39,6 +45,24 @@ public class SportifDao extends AbstractGymDao{
 
         return sportifs;
     }
+    
+    
+    public Sportifs getSportifByIdSportif(String idSportif) {
+    	
+    	List<Bson> pipeline = new ArrayList<>();
+    	
+    	Bson match = Aggregates.match(Filters.eq("idSportif", Integer.parseInt(idSportif)));
+        pipeline.add(match);
+       
+        Bson sportif = sportifsCollection.aggregate(pipeline).first();
+        Sportifs sportifMapped = new Sportifs();
+        
+        sportifMapped = SportifDocumentMapper.mapToSportif(sportif);
+        System.out.println(sportif.toString() + "************ DAO *************");
+        
+    	return sportifMapped;
+    }
+    
     
 	public int addSportif(Map<String, Object> sportifBody) {
 		System.out.println(sportifBody.toString() + "************ DAO *************");

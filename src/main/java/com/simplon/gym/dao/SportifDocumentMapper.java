@@ -41,6 +41,7 @@ public class SportifDocumentMapper {
         return sportif;
     }
 	
+	
 	private static Sports mapToSports(Document document) {
 		Sports sports = new Sports();
         if (document == null) {

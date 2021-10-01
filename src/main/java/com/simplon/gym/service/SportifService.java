@@ -1,6 +1,5 @@
 package com.simplon.gym.service;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,7 +22,7 @@ public class SportifService {
 	private static Logger log = LoggerFactory.getLogger(SportifDocumentMapper.class.getName());
 	
 
-	public SportifService(SportifDao sportifDao)
+	public SportifService( SportifDao sportifDao )
 	{
 		this.sportifDao = sportifDao;
 	}
@@ -51,6 +50,18 @@ public class SportifService {
 			return -1;
 		}
 		return 1;
+	}
+	
+	public Sportifs getSportifByIdSportif( String IdSportif ) {
+		System.out.println(IdSportif.toString() + "************ service *************");
+		
+		sportifDao.getSportifByIdSportif(IdSportif);
+		
+		
+		
+		Sportifs sportif = new Sportifs();
+		sportif = sportifDao.getSportifByIdSportif(IdSportif);
+		return sportif;
 	}
 
 }
